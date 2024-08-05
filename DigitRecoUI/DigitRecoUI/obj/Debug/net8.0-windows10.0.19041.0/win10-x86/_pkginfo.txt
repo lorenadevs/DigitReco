@@ -1,0 +1,1 @@
+C:\Users\loren\Documents\MAUI\DigitRecoUI\DigitRecoUI\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppPackages\DigitRecoUI_0.1.0.0_Debug_Test\DigitRecoUI_0.1.0.0_x86_Debug.msix

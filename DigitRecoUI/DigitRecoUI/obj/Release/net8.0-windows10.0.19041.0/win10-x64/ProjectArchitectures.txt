@@ -1,0 +1,1 @@
+C:\Users\loren\Documents\MAUI\DigitRecoUI\DigitRecoUI\DigitRecoUI.csproj;x64

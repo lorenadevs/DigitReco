@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="clr-namespace:CommunityToolkit.Maui.Views;assembly=CommunityToolkit.Maui"
+             x:Class="DigitRecoUI.HomePage"
+             Title="HomePage">
+
+    <Frame BorderColor="White"
+       HasShadow="True"
+       CornerRadius="12">
+        <Frame.Background>
+            <LinearGradientBrush>
+                <GradientStop Color="Yellow"
+                          Offset="0.08" />
+                <GradientStop Color="Green"
+                          Offset="1" />
+            </LinearGradientBrush>
+        </Frame.Background>
+
+
+        <ScrollView>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="2*" />
+                    <RowDefinition Height="*" />
+
+                    <RowDefinition Height="4*" />
+
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+
+                <Label 
+                    Grid.Row="1"
+                    TextColor="#F7F7F7"
+                    Text="DigitReco ;"
+                    FontSize="140"
+                    VerticalOptions="Center" 
+                    FontFamily="GalleroVintage"
+                    HorizontalOptions="Center"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    >
+                    <Label.Shadow>
+                        <Shadow Brush="Black"
+                        Offset="2,2"
+                        Radius="2"
+                        Opacity="0.4" />
+                    </Label.Shadow>
+                </Label>
+
+                <Label 
+                    TextColor="#F7F7F7"
+                    FontSize="25"
+                    Margin="-40"
+                    Text="from bytes to real stats."
+                    FontFamily="Saeada"
+                    VerticalOptions="Center" 
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    HorizontalOptions="Center" >
+                    <Label.Shadow>
+                        <Shadow Brush="Black"
+                        Offset="2,2"
+                        Radius="2"
+                        Opacity="0.3" />
+                    </Label.Shadow>
+                </Label>
+
+                <Image 
+                    Grid.Row="3"
+                    Grid.RowSpan="2"
+                    MaximumWidthRequest="1000"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Source="tutonotbold2.png"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />
+
+                <toolkit:DrawingView
+                    LineColor="Black"
+                    x:Name="drawingCanvas"
+                    HeightRequest="300"
+                    WidthRequest="300"
+                    LineWidth="10"
+                    BackgroundColor="White"
+                    Grid.Row="6"
+                    Grid.Column="0"
+                    />
+
+                <Label Text="Predicted number:" x:Name="headerText"
+                       FontFamily="Saeada"
+                       Grid.Row="5"
+                       Grid.Column="1"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       FontSize="30"
+                       TextColor="White"
+                       FontAttributes="Bold"
+                       />
+                
+                <Label x:Name="lblPrediction" Text=""
+                       Grid.Row="6"
+                       FontFamily="Saeada"
+                       Grid.Column="1"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       FontSize="140"
+                       TextColor="White"
+                       FontAttributes="Bold"
+                       />
+
+                <Button Text="Predict"
+                        Grid.Row="7"
+                        Grid.Column="0"
+                        HorizontalOptions="Center"
+                        Margin="20"
+                        VerticalOptions="Center"
+                        Clicked="OnPredictClicked"
+                        BackgroundColor="White"
+                        TextColor="Black"
+                        FontSize="20"
+                        FontAttributes="Bold"
+                        />
+
+                <ActivityIndicator
+                    x:Name="loadingIndicator" 
+                    IsRunning="false" 
+                    WidthRequest="100"
+                    HeightRequest="100"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" 
+                    Grid.Row="7"
+                    Grid.Column="1"
+                    Color="White" />
+
+
+
+            </Grid>
+        </ScrollView>
+    </Frame>
+    
+
+</ContentPage>
